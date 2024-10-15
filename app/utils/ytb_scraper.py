@@ -74,6 +74,7 @@ class YouTubeScraper:
                 json.dump({"contents": json_dict["contents"]}, fp,
                           indent=2, ensure_ascii=False)
         
+        logger.debug(f'Получено результатов: {len(items)}')
         return data
 
     def __extract_json(self, script: bs4.element.Tag) -> dict:

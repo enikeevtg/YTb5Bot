@@ -21,6 +21,8 @@ async def request_handler(message: Message):
                  f'{message.from_user.last_name} отправил запрос:\n' + \
                  f'{message.text}')
     result = await scraper.ytb_search_request(message.text)
+    logger.debug(f'Получено результатов: {len(result)}')
+
     n = min(5, len(result))
     for i in range(n):
         await message.answer(text=result[i])

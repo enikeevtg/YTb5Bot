@@ -4,18 +4,19 @@ from aiogram import Bot, Dispatcher
 from decouple import config
 import logging
 
+from database.models import db_main
 from handlers import start, text_request
 
 
 async def main():
+    await db_main()
     bot = Bot(config('TOKEN'))
     dp = Dispatcher()
-
     dp.include_routers(start.router)
     dp.include_router(text_request.router)  # include last
-
     await bot.delete_webhook(drop_pending_updates=True)
     await dp.start_polling(bot)
+
 
 if __name__ == '__main__':
     logfile = open('bot.log', 'w')
