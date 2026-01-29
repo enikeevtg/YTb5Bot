@@ -1,0 +1,15 @@
+[project]
+name = "ytb5bot"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "aiogram>=3.24.0",
+    "aiosqlite>=0.22.1",
+    "bs4>=0.0.2",
+    "greenlet>=3.3.1",
+    "lxml>=6.0.2",
+    "python-decouple>=3.8",
+    "sqlalchemy>=2.0.46",
+]

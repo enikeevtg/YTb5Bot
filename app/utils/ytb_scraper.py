@@ -3,7 +3,6 @@ import asyncio
 import bs4
 from bs4 import BeautifulSoup
 import logging
-from fake_useragent import UserAgent
 import json
 
 
